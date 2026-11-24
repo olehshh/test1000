@@ -1,6 +1,6 @@
 ---
 api:
   file: openapi.yaml
-  operationId: showPetById
+  operationId: showPetByIs
 hidden: false
 ---
