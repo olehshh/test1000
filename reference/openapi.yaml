@@ -1,20 +1,18 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: Swagger Petstore
+  title: Swagger Petstore (MCP)
   license:
     name: MIT
 servers:
   - url: http://petstore.swagger.io/v1
-x-readme:
-  apply-tag-changes: true
 paths:
   /pets:
     get:
       summary: List all pets
       operationId: listPets
       tags:
-        - test
+        - pets
       parameters:
         - name: limit
           in: query
@@ -35,32 +33,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Pets'
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
+              example:
+                someparam: somevalue
     post:
       summary: Create a pet
       operationId: createPets
       tags:
-        - pets lolo
+        - pets
       responses:
         '201':
           description: Null response
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
   /pets/{petId}:
     get:
       summary: Info for a specific pet
       operationId: showPetById
       tags:
-        - test
+        - pets
       parameters:
         - name: petId
           in: path
@@ -75,12 +63,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
 components:
   schemas:
     Pet:
@@ -96,6 +78,7 @@ components:
           type: string
         tag:
           type: string
+          example: hmmmmmmmmmmmmmmtest
     Pets:
       type: array
       items:
