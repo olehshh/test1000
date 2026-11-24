@@ -53,7 +53,7 @@ paths:
         - name: lalalala
           in: path
           required: true
-          description: The is of the pet to retrieve
+          description: The is of the pet to retrieve tst
           schema:
             type: string
       responses:
